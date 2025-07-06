@@ -29,8 +29,8 @@ class Main extends StatelessWidget {
           displayLarge: TextStyle(fontSize: 32),
           displayMedium: TextStyle(fontSize: 28),
           titleLarge: TextStyle(fontSize: 20),
-          bodyLarge: TextStyle(fontSize: 16),
-          bodyMedium: TextStyle(fontSize: 14),
+          bodyLarge: TextStyle(fontSize: 13),
+          bodyMedium: TextStyle(fontSize: 13),
         ),
       ),
       darkTheme: ThemeData.dark().copyWith(

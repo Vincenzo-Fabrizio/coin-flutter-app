@@ -34,7 +34,7 @@ class CoinAdapter extends TypeAdapter<Coin> {
   @override
   void write(BinaryWriter writer, Coin obj) {
     writer
-      ..writeByte(14)
+      ..writeByte(11)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)

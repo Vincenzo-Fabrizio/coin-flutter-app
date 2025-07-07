@@ -9,9 +9,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(CoinAdapter());
-  Hive.registerAdapter(OptionConservationAdapter()); // registra l'adapter
-  Hive.registerAdapter(NumismaticRarityAdapter()); // registra l'adapter
-  await Hive.openBox<Coin>('coins'); // apri la box PRIMA di runApp
+  Hive.registerAdapter(OptionConservationAdapter());
+  Hive.registerAdapter(NumismaticRarityAdapter());
+  await Hive.openBox<Coin>('coins');
   runApp(const Main());
 }
 
@@ -22,8 +22,8 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
       theme: ThemeData(
+        brightness: Brightness.light, // forza sempre il tema chiaro
         fontFamily: 'Merriweather',
         textTheme: const TextTheme(
           displayLarge: TextStyle(fontSize: 32),
@@ -32,9 +32,6 @@ class Main extends StatelessWidget {
           bodyLarge: TextStyle(fontSize: 13),
           bodyMedium: TextStyle(fontSize: 13),
         ),
-      ),
-      darkTheme: ThemeData.dark().copyWith(
-        textTheme: ThemeData.dark().textTheme.apply(fontFamily: 'Merriweather'),
       ),
       home: const App(),
     );

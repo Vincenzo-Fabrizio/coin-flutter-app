@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class GoldApiService {
-  static const String _apiKey = 'goldapi-jgyg126mbqeoaro-io';
+  static const String _apiKey = 'goldapi-1jlsbk17mct8ertw-io';
   static const String _baseUrl = 'https://www.goldapi.io/api';
 
   /// Ottiene il prezzo dell'oro per una data specifica (formato yyyy-mm-dd)

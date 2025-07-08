@@ -71,7 +71,7 @@ class _ViewPageState extends State<ViewPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'QUOTAZIONE ORO IN TEMPO REALE',
+                    'QUOTAZIONE ORO ATTUALE',
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,

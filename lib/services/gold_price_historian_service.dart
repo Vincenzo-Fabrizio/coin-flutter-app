@@ -6,8 +6,6 @@ class GoldApiService {
   static const String _apiKey = 'goldapi-1jlsbk17mct8ertw-io';
   static const String _baseUrl = 'https://www.goldapi.io/api';
 
-  /// Ottiene il prezzo dell'oro per una data specifica (formato yyyy-mm-dd)
-  /// Usa endpoint https://www.goldapi.io/api/XAU/EUR/{date}
   Future<GoldApiPrice> fetchGoldPriceOnDate(String date) async {
     final url = Uri.parse('$_baseUrl/XAU/EUR/$date');
     final response = await http.get(
@@ -22,7 +20,6 @@ class GoldApiService {
     }
   }
 
-  /// Restituisce lo storico degli ultimi 7 giorni, aggiornando solo se necessario
   Future<List<GoldApiPrice>> getGoldHistory() async {
     final prefs = await SharedPreferences.getInstance();
     final now = DateTime.now();
@@ -82,7 +79,7 @@ class GoldApiPrice {
     }
 
     if (price22k == null || price22k == 0) {
-      price22k = price24k * (22 / 24); // Stima approssimata prezzo 22k
+      price22k = price24k * (22 / 24);
     }
 
     return GoldApiPrice(priceGram24k: price24k, priceGram22k: price22k);

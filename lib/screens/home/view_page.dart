@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:coin/services/gold_price_service.dart'; // Quotazione attuale
-import 'package:coin/services/gold_price_historian_service.dart'; // Storico grafico
+import 'package:coin/services/gold_price_service.dart';
+import 'package:coin/services/gold_price_historian_service.dart';
 
 class ViewPage extends StatefulWidget {
   const ViewPage({super.key});
@@ -26,7 +26,6 @@ class _ViewPageState extends State<ViewPage> {
   Future<void> _loadAllData() async {
     setState(() => _loading = true);
 
-    // 1. Prendi la quotazione attuale
     try {
       final attuale = await GoldPriceService().fetchGoldPrice('eur');
       prezzoAttuale24k = attuale.priceGram24k;
@@ -36,7 +35,6 @@ class _ViewPageState extends State<ViewPage> {
       prezzoAttuale22k = null;
     }
 
-    // 2. Prendi lo storico (ad esempio ultimi 7 giorni)
     try {
       final storico = await GoldApiService().getGoldHistory();
       data24k = List.generate(
@@ -64,7 +62,6 @@ class _ViewPageState extends State<ViewPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 📌 Sezione informazioni iniziali
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 15.0,
@@ -106,16 +103,11 @@ class _ViewPageState extends State<ViewPage> {
               ),
             ),
 
-            const SizedBox(height: 10), // 🔺 Spazio tra intestazione e grafico
-            // 📊 Grafico che occupa tutto lo spazio rimanente
+            const SizedBox(height: 10),
+
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  15,
-                  0,
-                  15,
-                  24,
-                ), // 🔽 padding inferiore dalla navbar
+                padding: const EdgeInsets.fromLTRB(15, 0, 15, 24),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),

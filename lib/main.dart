@@ -3,7 +3,7 @@ import 'package:coin/app.dart';
 import 'package:coin/models/numismatic_rarity.dart';
 import 'package:coin/models/option_conservation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:coin/models/coin.dart'; // importa il modello Coin
+import 'package:coin/models/coin.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,14 +23,14 @@ class Main extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        brightness: Brightness.light, // forza sempre il tema chiaro
+        brightness: Brightness.light,
         fontFamily: 'Merriweather',
         textTheme: const TextTheme(
-          displayLarge: TextStyle(fontSize: 32),
-          displayMedium: TextStyle(fontSize: 28),
-          titleLarge: TextStyle(fontSize: 20),
-          bodyLarge: TextStyle(fontSize: 13),
-          bodyMedium: TextStyle(fontSize: 13),
+          displayLarge: TextStyle(fontSize: 24),
+          displayMedium: TextStyle(fontSize: 20),
+          titleLarge: TextStyle(fontSize: 16),
+          bodyLarge: TextStyle(fontSize: 14),
+          bodyMedium: TextStyle(fontSize: 12),
         ),
       ),
       home: const App(),

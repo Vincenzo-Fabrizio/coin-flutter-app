@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:coin/screens/collezione/add_coin_page.dart'; // importa la pagina
+import 'package:coin/screens/collezione/add_coin_page.dart';
 import 'package:coin/data/coin_local_data_source.dart';
 import 'package:coin/data/coin_repository.dart';
 import 'package:coin/screens/collezione/list_coin_page.dart';
